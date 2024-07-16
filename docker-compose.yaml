@@ -1,0 +1,13 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: multi_currency_money
+    volumes:
+      - .:/home/node/multi_currency_money
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      NODE_ENV: development

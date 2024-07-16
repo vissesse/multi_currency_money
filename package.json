@@ -1,0 +1,35 @@
+{
+  "name": "multi_currency_money",
+  "version": "1.0.0",
+  "description": "Aprimorando conhecimentos em TDD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vissesse/multi_currency_money.git"
+  },
+  "keywords": [
+    "test",
+    "tdd",
+    "node"
+  ],
+  "author": "Carlos Vissesse",
+  "license": "MIT",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsnd  --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "test": "jest test test/",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.10",
+    "express": "^4.19.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "jest": "^29.7.0",
+    "node-ts": "^6.0.1",
+    "ts-jest": "^29.2.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}
