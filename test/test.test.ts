@@ -1,5 +1,6 @@
+import { assert } from "console";
 import { Bank, Expression, Money, Sum } from "../src/currency-money";
-// page 67
+// page 67,73
 describe('Tenting currency-money app'.toUpperCase(), () => {
     test("Should run", () => {
     })
@@ -24,9 +25,9 @@ describe('Tenting currency-money app'.toUpperCase(), () => {
 
     test("test simple addiction", () => {
         const five = Money.dollar(5)
-        const sum = five.plus(five)
-        const bank = new Bank()
-        const reduced = bank.reduce(sum, 'USD')
+        const sum: Expression = five.plus(five)
+        const bank: Bank = new Bank()
+        const reduced: Money = bank.reduce(sum, 'USD')
         expect(reduced.equals(Money.dollar(10))).toBeTruthy()
     })
 
@@ -38,6 +39,11 @@ describe('Tenting currency-money app'.toUpperCase(), () => {
         expect(five).toBe(sum.addend)
     })
 
-    
+    test("Test Reduce Sum", () => {
+        const sum = new Sum(Money.dollar(3), Money.dollar(4))
+        const bank = new Bank();
+        const result = bank.reduce(sum, "USD")
+        expect(result.equals(Money.dollar(7))).toBeTruthy();
+    })
 });
 
