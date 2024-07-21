@@ -4,7 +4,7 @@ import { Expression } from "./Expression";
 
 export class Money implements Expression {
 
-    constructor(public amount: number, protected currency_: string) { }
+    constructor(readonly amount: number, readonly currency_: string) { }
     public reduce(bank: Bank, to: string): Money {
         const rate = bank.rate(this.currency(), to)
         return new Money(this.amount / rate, to);

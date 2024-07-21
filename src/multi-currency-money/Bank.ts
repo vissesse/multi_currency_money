@@ -22,7 +22,7 @@ export class Bank {
 class Pair {
     constructor(private from: string, private to: string) { }
     equals(object: Object) {
-        const pair = object as Pair;
+        const pair = <Pair>object;
         return this.from === pair.from && this.to === pair.to
     }
     hashCode() {

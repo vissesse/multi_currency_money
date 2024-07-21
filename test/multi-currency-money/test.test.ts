@@ -1,7 +1,7 @@
-import { Bank } from "../src/Bank";
-import { Expression } from "../src/Expression";
-import { Money } from "../src/Money";
-import { Sum } from "../src/Sum";
+import { Bank } from "../../src/multi-currency-money/Bank";
+import { Expression } from "../../src/multi-currency-money/Expression";
+import { Money } from "../../src/multi-currency-money/Money";
+import { Sum } from "../../src/multi-currency-money/Sum";
 
 describe('Tenting currency-money app'.toUpperCase(), () => {
     test("Should run", () => {
@@ -37,7 +37,7 @@ describe('Tenting currency-money app'.toUpperCase(), () => {
 
         const five: Money = Money.dollar(5)
         const result: Expression = five.plus(five)
-        const sum: Sum = result as Sum;
+        const sum: Sum = <Sum>result;
         expect(five).toBe(sum.augend)
         expect(five).toBe(sum.addend)
     })
@@ -103,3 +103,4 @@ describe('Tenting currency-money app'.toUpperCase(), () => {
 
 });
 
+// ready for chapter II

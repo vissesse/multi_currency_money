@@ -5,7 +5,7 @@ import { Money } from "./Money"
 
 export class Sum implements Expression {
 
-    constructor(public augend: Expression, public addend: Expression) { }
+    constructor(readonly augend: Expression, readonly addend: Expression) { }
     times(multiplier: number): Expression {
         return new Sum(this.augend.times(multiplier), this.addend.times(multiplier))
     }
